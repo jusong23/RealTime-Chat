@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
 
@@ -21,10 +22,30 @@ class LogInViewController: UIViewController {
     }
 
     @objc func tappedLoginInButton() {
-        print(self.emailTextField.text!)
-        print(self.passwordTextField.text!)
-        let chatViewController = ChatViewController()
-        self.navigationController?.pushViewController(chatViewController, animated: true)
+
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+
+        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                self.logInFail(error: error.localizedDescription)
+            } else {
+                let chatViewController = ChatViewController()
+                self.navigationController?.pushViewController(chatViewController, animated: true)
+            }
+        }
+    }
+    
+    func logInFail(error: String) {
+        let complete = UIAlertController(title: "로그인 실패", message: error, preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print(self.emailTextField.text!)
+            print(self.passwordTextField.text!)
+        })
+        complete.addAction(action)
+        self.present(complete, animated: true, completion: nil)
     }
     
     func setUI() {

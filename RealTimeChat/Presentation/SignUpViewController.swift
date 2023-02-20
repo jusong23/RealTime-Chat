@@ -7,32 +7,55 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
 
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
     let signUpButton = UIButton()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
     }
-    
+
     @objc func tappedBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
+    //MARK: Sign Up
     @objc func tappedSignUpButton() {
-        alertAction()
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                self.signUpFail(error: error.localizedDescription)
+            } else {
+                self.signUpSuccess()
+            }
+        }
     }
-    
+
     func setNavigationBar() {
         let leftButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(tappedBackButton))
         self.navigationItem.rightBarButtonItem = leftButton
     }
-    
-    func alertAction() {
+
+    func signUpFail(error: String) {
+        let complete = UIAlertController(title: "회원가입 실패", message: error, preferredStyle: .alert)
+
+        let action = UIAlertAction(title: "확인", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print(self.emailTextField.text!)
+            print(self.passwordTextField.text!)
+        })
+        complete.addAction(action)
+        self.present(complete, animated: true, completion: nil)
+    }
+
+    func signUpSuccess() {
         let complete = UIAlertController(title: "회원가입 완료", message: "가입된 정보로 로그인하세요.", preferredStyle: .alert)
 
         let action = UIAlertAction(title: "확인", style: .cancel, handler: {
@@ -44,11 +67,11 @@ class SignUpViewController: UIViewController {
         complete.addAction(action)
         self.present(complete, animated: true, completion: nil)
     }
-    
+
     func setUI() {
         view.backgroundColor = .systemBackground
         title = "Sign Up"
-        
+
         [emailTextField, passwordTextField, signUpButton].forEach {
             view.addSubview($0)
         }
@@ -72,7 +95,7 @@ class SignUpViewController: UIViewController {
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(30)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(30)
         }
-        
+
         //MARK: signUpButton
         signUpButton.backgroundColor = .black
         signUpButton.tintColor = .white
@@ -85,7 +108,7 @@ class SignUpViewController: UIViewController {
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(30)
         }
     }
-    
+
 }
 
 #if DEBUG

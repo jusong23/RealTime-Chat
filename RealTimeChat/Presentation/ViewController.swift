@@ -29,8 +29,8 @@ class ViewController: UIViewController {
     @objc func tappedLogInButton() {
         print(#function)
         let logInViewController = LogInViewController()
-        self.navigationController?.pushViewController(logInViewController, animated: true)    }
-
+        self.navigationController?.pushViewController(logInViewController, animated: true)
+    }
 
     func setUI() {
         view.backgroundColor = .systemBackground

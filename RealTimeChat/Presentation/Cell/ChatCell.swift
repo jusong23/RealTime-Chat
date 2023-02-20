@@ -16,12 +16,6 @@ class ChatCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-//        [
-//            messageView, messageLabel
-//        ].forEach {
-//            contentView.addSubview($0)
-//        }
-        
         
         contentView.addSubview(messageView)
         messageView.addSubview(messageLabel)
@@ -31,7 +25,6 @@ class ChatCell: UITableViewCell {
             make.edges.equalToSuperview().inset(5)
         }
         
-        messageLabel.text = "test"
         messageLabel.textColor = .black
         messageLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(5)
