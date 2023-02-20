@@ -6,30 +6,64 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
     //MARK: - Propeties
     let safeArea = UIView()
+    let signUpButton = UIButton()
+    let logInButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUI()
     }
 
-    func setUI() {
-        title = "회원가입"
-        view.backgroundColor = .systemBackground
-        view.addSubview(safeArea)
-
-        safeArea.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-        }
+    @objc func tappedSignUpButton() {
+        print(#function)
+        let signUpViewController = SignUpViewController()
+        self.navigationController?.pushViewController(signUpViewController, animated: true)
     }
 
+    @objc func tappedLogInButton() {
+        print(#function)
+        let logInViewController = LogInViewController()
+        self.navigationController?.pushViewController(logInViewController, animated: true)    }
 
 
+    func setUI() {
+        view.backgroundColor = .systemBackground
+        title = "Main"
+        
+        [signUpButton, logInButton].forEach {
+            view.addSubview($0)
+        }
+
+        //MARK: signUpButton
+        signUpButton.backgroundColor = .black
+        signUpButton.tintColor = .white
+        signUpButton.setTitle("Sign Up", for: .normal)
+        signUpButton.addTarget(self, action: #selector(tappedSignUpButton), for: .touchUpInside)
+        signUpButton.snp.makeConstraints { make in
+            make.bottom.equalTo(logInButton.snp.bottom).inset(60)
+            make.centerX.equalTo(self.view.snp.centerX)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(30)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(30)
+        }
+
+        //MARK: logInButton
+        logInButton.backgroundColor = .black
+        logInButton.tintColor = .white
+        logInButton.setTitle("Log In", for: .normal)
+        logInButton.addTarget(self, action: #selector(tappedLogInButton), for: .touchUpInside)
+        logInButton.snp.makeConstraints { make in
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(60)
+            make.centerX.equalTo(self.view.snp.centerX)
+            make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(30)
+            make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(30)
+        }
+    }
 }
 
 #if DEBUG
