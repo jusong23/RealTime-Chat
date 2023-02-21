@@ -31,7 +31,9 @@ class ViewController: UIViewController {
         let logInViewController = LogInViewController()
         self.navigationController?.pushViewController(logInViewController, animated: true)
     }
+}
 
+extension ViewController {
     func setUI() {
         view.backgroundColor = .systemBackground
         

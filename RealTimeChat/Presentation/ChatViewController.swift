@@ -33,50 +33,8 @@ class ChatViewController: UIViewController {
         setUI()
         loadMessages()
         hideKeyboard()
-    }
+        addKeyboardNotification()
 
-    func configureTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-
-    func setUI() {
-        view.backgroundColor = .systemBackground
-        title = "Chat"
-
-        [tableView, bottomView].forEach {
-            view.addSubview($0)
-        }
-
-        tableView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.bottom.equalToSuperview().inset(120)
-        }
-
-        bottomView.backgroundColor = .lightGray
-        bottomView.snp.makeConstraints { make in
-            make.top.equalTo(tableView.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
-
-        [sendTextField, sendButton].forEach {
-            bottomView.addSubview($0)
-        }
-        sendTextField.placeholder = "Send a Message"
-        sendTextField.textColor = .black
-        sendTextField.borderStyle = .roundedRect
-        sendTextField.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().inset(10)
-            make.trailing.equalTo(sendButton.snp.leading).inset(-10)
-        }
-
-        sendButton.addTarget(self, action: #selector(tappedSendUpButton), for: .touchUpInside)
-        sendButton.setImage(UIImage(systemName: "paperplane.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .light)), for: .normal)
-        sendButton.snp.makeConstraints { make in
-            make.centerY.equalTo(sendTextField.snp.centerY)
-            make.trailing.equalToSuperview().inset(10)
-        }
     }
 
     //MARK: Load
@@ -105,20 +63,11 @@ class ChatViewController: UIViewController {
             }
         }
     }
-
+    
     func postMessage(body: String, title: String) {
         // token: 상대방의 토큰
         // body, title : 내가 보낸 메시지
         sendMessage.sendPostRequest(token: "e_LimR9qX0IrmtxXG3jLAg:APA91bFFBvXgxUu1rO8XRegpky2BuHZ3fHRta2qIKRV_VTahnJf_IdrpIpVheJFQtvZzBNB1DU8ei3mWzPzUqVjlPBGhV4ShoqxPiCMnZJUIbFr4d92BlgL33JYrL8-BqPx86_Q8PVML", body: body, title: title)
-    }
-
-    func setNavigationBar() {
-        let leftButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(tappedBackButton))
-        self.navigationItem.leftBarButtonItem = leftButton
-    }
-
-    @objc func tappedBackButton() {
-        self.navigationController?.popViewController(animated: true)
     }
 
     //MARK: Send Up
@@ -134,6 +83,7 @@ class ChatViewController: UIViewController {
                 } else {
                     print("Success save data")
                     DispatchQueue.main.async {
+                        //MARK: FCM 요청
                         self.postMessage(body: messageSender, title: messageBody)
                         self.sendTextField.text = ""
                     }
@@ -171,8 +121,63 @@ extension ChatViewController {
             action: #selector(ChatViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    func setNavigationBar() {
+        let leftButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(tappedBackButton))
+        self.navigationItem.leftBarButtonItem = leftButton
+    }
+
+    @objc func tappedBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    /// UI Configure
+    func setUI() {
+        view.backgroundColor = .systemBackground
+        title = "Chat"
+
+        [tableView, bottomView].forEach {
+            view.addSubview($0)
+        }
+
+        tableView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview().inset(120)
+        }
+
+        bottomView.backgroundColor = .lightGray
+        bottomView.snp.makeConstraints { make in
+            make.top.equalTo(tableView.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        [sendTextField, sendButton].forEach {
+            bottomView.addSubview($0)
+        }
+        sendTextField.placeholder = "Send a Message"
+        sendTextField.textColor = .black
+        sendTextField.borderStyle = .roundedRect
+        sendTextField.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().inset(10)
+            make.trailing.equalTo(sendButton.snp.leading).inset(-10)
+        }
+
+        sendButton.addTarget(self, action: #selector(tappedSendUpButton), for: .touchUpInside)
+        sendButton.setImage(UIImage(systemName: "paperplane.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .light)), for: .normal)
+        sendButton.snp.makeConstraints { make in
+            make.centerY.equalTo(sendTextField.snp.centerY)
+            make.trailing.equalToSuperview().inset(10)
+        }
     }
 }
 

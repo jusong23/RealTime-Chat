@@ -14,7 +14,7 @@ class LogInViewController: UIViewController {
     let emailTextField = UITextField()
     let passwordTextField = UITextField()
     let logInButton = UIButton()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,7 +36,7 @@ class LogInViewController: UIViewController {
             }
         }
     }
-    
+
     func logInFail(error: String) {
         let complete = UIAlertController(title: "로그인 실패", message: error, preferredStyle: .alert)
 
@@ -48,11 +48,13 @@ class LogInViewController: UIViewController {
         complete.addAction(action)
         self.present(complete, animated: true, completion: nil)
     }
-    
+}
+
+extension LogInViewController {
     func setUI() {
         view.backgroundColor = .systemBackground
         title = "Sign Up"
-        
+
         [emailTextField, passwordTextField, logInButton].forEach {
             view.addSubview($0)
         }
@@ -76,7 +78,7 @@ class LogInViewController: UIViewController {
             make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.leading).inset(30)
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(30)
         }
-        
+
         //MARK: logInButton
         logInButton.backgroundColor = .black
         logInButton.tintColor = .white
@@ -89,7 +91,6 @@ class LogInViewController: UIViewController {
             make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.trailing).inset(30)
         }
     }
-
 }
 
 #if DEBUG
