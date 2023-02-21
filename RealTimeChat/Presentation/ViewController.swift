@@ -34,8 +34,9 @@ class ViewController: UIViewController {
 
     func setUI() {
         view.backgroundColor = .systemBackground
-        title = "Main"
         
+        title = "Main"
+
         [signUpButton, logInButton].forEach {
             view.addSubview($0)
         }
@@ -68,6 +69,7 @@ class ViewController: UIViewController {
 
 #if DEBUG
     import SwiftUI
+
     struct ViewController_Representable: UIViewControllerRepresentable {
 
         func updateUIViewController(_ uiView: UIViewController, context: Context) {
@@ -89,4 +91,6 @@ class ViewController: UIViewController {
             }
 
         }
-    }#endif
+    }
+#endif
+

@@ -14,6 +14,15 @@
 		7562221A29A316560055CC98 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562221929A316560055CC98 /* ChatViewController.swift */; };
 		7562221D29A316C50055CC98 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562221C29A316C50055CC98 /* ChatCell.swift */; };
 		7562222129A32BB90055CC98 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562222029A32BB90055CC98 /* Message.swift */; };
+		7562222429A44CA60055CC98 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562222329A44CA60055CC98 /* Secret.swift */; };
+		7562222729A450FA0055CC98 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7562222629A450FA0055CC98 /* SnapKit */; };
+		7562222A29A451AD0055CC98 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7562222929A451AD0055CC98 /* FirebaseAuth */; };
+		7562222C29A451AD0055CC98 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7562222B29A451AD0055CC98 /* FirebaseFirestore */; };
+		7562222E29A451AD0055CC98 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7562222D29A451AD0055CC98 /* FirebaseFirestoreSwift */; };
+		7562223029A451AD0055CC98 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 7562222F29A451AD0055CC98 /* FirebaseMessaging */; };
+		7562223229A451AD0055CC98 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7562223129A451AD0055CC98 /* FirebaseStorage */; };
+		7562223429A457A20055CC98 /* RequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562223329A457A20055CC98 /* RequestBody.swift */; };
+		7562223A29A457F80055CC98 /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7562223929A457F80055CC98 /* SendMessage.swift */; };
 		75D0A6B829A2EF9700CAE969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0A6B729A2EF9700CAE969 /* AppDelegate.swift */; };
 		75D0A6BA29A2EF9700CAE969 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0A6B929A2EF9700CAE969 /* SceneDelegate.swift */; };
 		75D0A6BC29A2EF9700CAE969 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0A6BB29A2EF9700CAE969 /* ViewController.swift */; };
@@ -22,10 +31,6 @@
 		75D0A6CF29A2EF9900CAE969 /* RealTimeChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0A6CE29A2EF9900CAE969 /* RealTimeChatTests.swift */; };
 		75D0A6D929A2EF9A00CAE969 /* RealTimeChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0A6D829A2EF9A00CAE969 /* RealTimeChatUITests.swift */; };
 		75D0A6DB29A2EF9A00CAE969 /* RealTimeChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D0A6DA29A2EF9A00CAE969 /* RealTimeChatUITestsLaunchTests.swift */; };
-		75D0A6EA29A2F2E200CAE969 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 75D0A6E929A2F2E200CAE969 /* FirebaseAuth */; };
-		75D0A6EC29A2F2E200CAE969 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 75D0A6EB29A2F2E200CAE969 /* FirebaseFirestore */; };
-		75D0A6EE29A2F2E200CAE969 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 75D0A6ED29A2F2E200CAE969 /* FirebaseFirestoreSwift */; };
-		75D0A6F029A2F2E200CAE969 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 75D0A6EF29A2F2E200CAE969 /* FirebaseStorage */; };
 		75D0A6F229A2F66A00CAE969 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75D0A6F129A2F66A00CAE969 /* GoogleService-Info.plist */; };
 		9775431F31F49A159D3BDECA /* Pods_RealTimeChat_RealTimeChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160BA6CC0D95FFDCD6D75B93 /* Pods_RealTimeChat_RealTimeChatUITests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +63,10 @@
 		7562221929A316560055CC98 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		7562221C29A316C50055CC98 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		7562222029A32BB90055CC98 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7562222229A35D120055CC98 /* RealTimeChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RealTimeChat.entitlements; sourceTree = "<group>"; };
+		7562222329A44CA60055CC98 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		7562223329A457A20055CC98 /* RequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBody.swift; sourceTree = "<group>"; };
+		7562223929A457F80055CC98 /* SendMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
 		75D0A6B429A2EF9700CAE969 /* RealTimeChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealTimeChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D0A6B729A2EF9700CAE969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D0A6B929A2EF9700CAE969 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,11 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7562223029A451AD0055CC98 /* FirebaseMessaging in Frameworks */,
+				7562222E29A451AD0055CC98 /* FirebaseFirestoreSwift in Frameworks */,
 				20E0F9F1008555D144B3FA28 /* Pods_RealTimeChat.framework in Frameworks */,
-				75D0A6EA29A2F2E200CAE969 /* FirebaseAuth in Frameworks */,
-				75D0A6EC29A2F2E200CAE969 /* FirebaseFirestore in Frameworks */,
-				75D0A6F029A2F2E200CAE969 /* FirebaseStorage in Frameworks */,
-				75D0A6EE29A2F2E200CAE969 /* FirebaseFirestoreSwift in Frameworks */,
+				7562222C29A451AD0055CC98 /* FirebaseFirestore in Frameworks */,
+				7562223229A451AD0055CC98 /* FirebaseStorage in Frameworks */,
+				7562222A29A451AD0055CC98 /* FirebaseAuth in Frameworks */,
+				7562222729A450FA0055CC98 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,8 +142,18 @@
 			isa = PBXGroup;
 			children = (
 				7562222029A32BB90055CC98 /* Message.swift */,
+				7562222329A44CA60055CC98 /* Secret.swift */,
+				7562223329A457A20055CC98 /* RequestBody.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7562223829A457E20055CC98 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7562223929A457F80055CC98 /* SendMessage.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		75D0A6AB29A2EF9700CAE969 = {
@@ -160,6 +181,8 @@
 		75D0A6B629A2EF9700CAE969 /* RealTimeChat */ = {
 			isa = PBXGroup;
 			children = (
+				7562223829A457E20055CC98 /* Service */,
+				7562222229A35D120055CC98 /* RealTimeChat.entitlements */,
 				7562221F29A32BAA0055CC98 /* Model */,
 				75D0A6E729A2F09400CAE969 /* Presentation */,
 				75D0A6B729A2EF9700CAE969 /* AppDelegate.swift */,
@@ -225,7 +248,6 @@
 				75D0A6B029A2EF9700CAE969 /* Sources */,
 				75D0A6B129A2EF9700CAE969 /* Frameworks */,
 				75D0A6B229A2EF9700CAE969 /* Resources */,
-				E175D462100670C0EA66ECF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,10 +255,12 @@
 			);
 			name = RealTimeChat;
 			packageProductDependencies = (
-				75D0A6E929A2F2E200CAE969 /* FirebaseAuth */,
-				75D0A6EB29A2F2E200CAE969 /* FirebaseFirestore */,
-				75D0A6ED29A2F2E200CAE969 /* FirebaseFirestoreSwift */,
-				75D0A6EF29A2F2E200CAE969 /* FirebaseStorage */,
+				7562222629A450FA0055CC98 /* SnapKit */,
+				7562222929A451AD0055CC98 /* FirebaseAuth */,
+				7562222B29A451AD0055CC98 /* FirebaseFirestore */,
+				7562222D29A451AD0055CC98 /* FirebaseFirestoreSwift */,
+				7562222F29A451AD0055CC98 /* FirebaseMessaging */,
+				7562223129A451AD0055CC98 /* FirebaseStorage */,
 			);
 			productName = RealTimeChat;
 			productReference = 75D0A6B429A2EF9700CAE969 /* RealTimeChat.app */;
@@ -269,7 +293,6 @@
 				75D0A6D029A2EF9A00CAE969 /* Sources */,
 				75D0A6D129A2EF9A00CAE969 /* Frameworks */,
 				75D0A6D229A2EF9A00CAE969 /* Resources */,
-				3622F7951434523B0A62ED94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,7 +337,8 @@
 			);
 			mainGroup = 75D0A6AB29A2EF9700CAE969;
 			packageReferences = (
-				75D0A6E829A2F2E200CAE969 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				7562222529A450FA0055CC98 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7562222829A451AD0055CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 75D0A6B529A2EF9700CAE969 /* Products */;
 			projectDirPath = "";
@@ -355,23 +379,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3622F7951434523B0A62ED94 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RealTimeChat-RealTimeChatUITests/Pods-RealTimeChat-RealTimeChatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RealTimeChat-RealTimeChatUITests/Pods-RealTimeChat-RealTimeChatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealTimeChat-RealTimeChatUITests/Pods-RealTimeChat-RealTimeChatUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4EAA2908E2C91BE4A2DBC7E1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -438,23 +445,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E175D462100670C0EA66ECF9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RealTimeChat/Pods-RealTimeChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RealTimeChat/Pods-RealTimeChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealTimeChat/Pods-RealTimeChat-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -464,11 +454,14 @@
 			files = (
 				75D0A6BC29A2EF9700CAE969 /* ViewController.swift in Sources */,
 				7562221D29A316C50055CC98 /* ChatCell.swift in Sources */,
+				7562223A29A457F80055CC98 /* SendMessage.swift in Sources */,
 				75D0A6B829A2EF9700CAE969 /* AppDelegate.swift in Sources */,
+				7562223429A457A20055CC98 /* RequestBody.swift in Sources */,
 				7562221429A3092C0055CC98 /* SignUpViewController.swift in Sources */,
 				7562221A29A316560055CC98 /* ChatViewController.swift in Sources */,
 				7562222129A32BB90055CC98 /* Message.swift in Sources */,
 				7562221629A313C10055CC98 /* LogInViewController.swift in Sources */,
+				7562222429A44CA60055CC98 /* Secret.swift in Sources */,
 				75D0A6BA29A2EF9700CAE969 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RealTimeChat/RealTimeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9LAFQ24GSN;
@@ -665,6 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RealTimeChat/RealTimeChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9LAFQ24GSN;
@@ -809,7 +804,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		75D0A6E829A2F2E200CAE969 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		7562222529A450FA0055CC98 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		7562222829A451AD0055CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -820,24 +823,34 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		75D0A6E929A2F2E200CAE969 /* FirebaseAuth */ = {
+		7562222629A450FA0055CC98 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D0A6E829A2F2E200CAE969 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 7562222529A450FA0055CC98 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7562222929A451AD0055CC98 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7562222829A451AD0055CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		75D0A6EB29A2F2E200CAE969 /* FirebaseFirestore */ = {
+		7562222B29A451AD0055CC98 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D0A6E829A2F2E200CAE969 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 7562222829A451AD0055CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		75D0A6ED29A2F2E200CAE969 /* FirebaseFirestoreSwift */ = {
+		7562222D29A451AD0055CC98 /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D0A6E829A2F2E200CAE969 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 7562222829A451AD0055CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		75D0A6EF29A2F2E200CAE969 /* FirebaseStorage */ = {
+		7562222F29A451AD0055CC98 /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75D0A6E829A2F2E200CAE969 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 7562222829A451AD0055CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		7562223129A451AD0055CC98 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7562222829A451AD0055CC98 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */

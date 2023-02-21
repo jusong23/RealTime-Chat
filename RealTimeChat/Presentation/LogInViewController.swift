@@ -21,6 +21,7 @@ class LogInViewController: UIViewController {
         setUI()
     }
 
+    //MARK: Log In
     @objc func tappedLoginInButton() {
 
         guard let email = emailTextField.text else { return }
